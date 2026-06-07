@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <title>Política de Privacidad — Puchito</title>
+  <style>
+    :root {
+      --bg: #111111;
+      --card: #1a1a1a;
+      --text: #f5f5f4;
+      --muted: #a3a3a3;
+      --coral: #ff6b4a;
+      --border: #2a2a2a;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      padding: 0 20px;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 48px 0 80px; }
+    .brand {
+      font-size: 28px; font-weight: 800; letter-spacing: -1px; margin: 0 0 4px;
+    }
+    .brand .dot { color: var(--coral); font-style: italic; }
+    h1 { font-size: 24px; margin: 28px 0 4px; letter-spacing: -0.5px; }
+    h2 { font-size: 18px; margin: 32px 0 8px; letter-spacing: -0.3px; }
+    p, li { color: var(--text); font-size: 15px; }
+    .muted { color: var(--muted); font-size: 14px; }
+    a { color: var(--coral); }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 16px 20px; margin: 16px 0;
+    }
+    .toggle { display: flex; gap: 8px; margin-bottom: 24px; }
+    .toggle button {
+      background: var(--card); color: var(--muted); border: 1px solid var(--border);
+      border-radius: 99px; padding: 7px 16px; font-size: 14px; cursor: pointer;
+      font-weight: 600;
+    }
+    .toggle button.active { background: var(--coral); color: #111; border-color: var(--coral); }
+    section[hidden] { display: none; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    footer { color: var(--muted); font-size: 13px; margin-top: 40px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">Puchito<span class="dot">.</span></div>
+
+    <div class="toggle">
+      <button id="btn-es" class="active" onclick="setLang('es')">Español</button>
+      <button id="btn-en" onclick="setLang('en')">English</button>
+    </div>
+
+    <!-- ====================== ESPAÑOL ====================== -->
+    <section id="es">
+      <h1>Política de Privacidad</h1>
+      <p class="muted">Última actualización: 7 de junio de 2026</p>
+
+      <p>
+        Esta política describe cómo <strong>Puchito</strong> (la "App") recolecta, usa y
+        protege tu información. Puchito es una aplicación para dividir gastos entre amigos.
+        Al usar la App aceptás las prácticas descritas acá.
+      </p>
+      <div class="card">
+        <p style="margin:0;"><strong>Responsable:</strong> Nicolás Villacorta (desarrollador de Puchito).<br/>
+        <strong>Contacto:</strong> <a href="mailto:villacortav.nicolas@gmail.com">villacortav.nicolas@gmail.com</a></p>
+      </div>
+
+      <h2>1. Qué datos recolectamos</h2>
+      <ul>
+        <li><strong>Datos de cuenta:</strong> al iniciar sesión con Google, recibimos tu
+          nombre, dirección de email y foto de perfil.</li>
+        <li><strong>Contenido que vos creás:</strong> los grupos que armás, los gastos que
+          cargás (descripción, monto, participantes), los pagos registrados, los mensajes de
+          chat dentro de los grupos y la foto de avatar que subas.</li>
+        <li><strong>Datos técnicos mínimos:</strong> información necesaria para mantener tu
+          sesión iniciada de forma segura.</li>
+      </ul>
+      <p>No recolectamos tu ubicación, contactos, ni datos de pago. Puchito no procesa
+        dinero real: solo lleva la cuenta de quién le debe a quién.</p>
+
+      <h2>2. Para qué usamos tus datos</h2>
+      <ul>
+        <li>Hacer funcionar la App: crear tu cuenta, mostrar tus grupos y calcular los saldos.</li>
+        <li>Mostrar tu nombre y avatar a los demás miembros de tus grupos.</li>
+        <li>Permitir el chat dentro de cada grupo.</li>
+        <li>Responder tus consultas de soporte.</li>
+      </ul>
+      <p>No vendemos tus datos ni los usamos para publicidad.</p>
+
+      <h2>3. Con quién los compartimos</h2>
+      <p>Compartimos datos únicamente con los proveedores que hacen funcionar la App:</p>
+      <ul>
+        <li><strong>Supabase</strong> — almacenamiento de la base de datos, autenticación y
+          archivos (avatares). Tus datos se guardan en su infraestructura.
+          (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Privacidad de Supabase</a>)</li>
+        <li><strong>Google</strong> — inicio de sesión (Google Sign-In / OAuth).
+          (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacidad de Google</a>)</li>
+      </ul>
+      <p>Los demás miembros de un grupo pueden ver tu nombre, tu avatar y los gastos,
+        pagos y mensajes que cargues en ese grupo.</p>
+
+      <h2>4. Dónde se guardan y cómo se protegen</h2>
+      <p>Tus datos se almacenan en la infraestructura de Supabase (PostgreSQL). El acceso
+        está restringido mediante políticas de seguridad a nivel de fila (RLS), de modo que
+        cada usuario solo puede ver los datos de los grupos a los que pertenece. La conexión
+        con los servidores está cifrada (HTTPS).</p>
+
+      <h2>5. Conservación y eliminación de datos</h2>
+      <p>Conservamos tus datos mientras tu cuenta esté activa. Podés <strong>eliminar tu
+        cuenta en cualquier momento</strong> desde la App (Cuenta → Eliminar cuenta).</p>
+      <p>Al eliminar tu cuenta:</p>
+      <ul>
+        <li>Borramos tus datos personales: nombre, email y foto de perfil, y se cierra tu acceso.</li>
+        <li>Por integridad contable, los gastos y pagos que compartiste con otras personas se
+          conservan de forma <strong>anonimizada</strong> (aparecés como "Usuario eliminado"),
+          para no alterar los saldos de los demás miembros del grupo.</li>
+      </ul>
+      <p>Si querés ejercer cualquier derecho sobre tus datos, escribinos a
+        <a href="mailto:villacortav.nicolas@gmail.com">villacortav.nicolas@gmail.com</a>.</p>
+
+      <h2>6. Tus derechos</h2>
+      <p>Podés acceder a tus datos, corregirlos (desde Editar perfil) o eliminarlos
+        (eliminando tu cuenta). Para cualquier otro pedido, contactanos por mail.</p>
+
+      <h2>7. Menores de edad</h2>
+      <p>Puchito no está dirigida a menores de 13 años. No recolectamos a sabiendas datos de
+        menores de esa edad. Si creés que un menor nos proporcionó datos, escribinos y los
+        eliminaremos.</p>
+
+      <h2>8. Cambios en esta política</h2>
+      <p>Podemos actualizar esta política. Publicaremos la nueva versión en esta misma página
+        y actualizaremos la fecha de "Última actualización".</p>
+
+      <h2>9. Contacto</h2>
+      <p>Por dudas sobre esta política o tus datos:
+        <a href="mailto:villacortav.nicolas@gmail.com">villacortav.nicolas@gmail.com</a></p>
+    </section>
+
+    <!-- ====================== ENGLISH ====================== -->
+    <section id="en" hidden>
+      <h1>Privacy Policy</h1>
+      <p class="muted">Last updated: June 7, 2026</p>
+
+      <p>
+        This policy describes how <strong>Puchito</strong> (the "App") collects, uses and
+        protects your information. Puchito is an app for splitting expenses among friends.
+        By using the App you agree to the practices described here.
+      </p>
+      <div class="card">
+        <p style="margin:0;"><strong>Data controller:</strong> Nicolás Villacorta (developer of Puchito).<br/>
+        <strong>Contact:</strong> <a href="mailto:villacortav.nicolas@gmail.com">villacortav.nicolas@gmail.com</a></p>
+      </div>
+
+      <h2>1. Data we collect</h2>
+      <ul>
+        <li><strong>Account data:</strong> when you sign in with Google, we receive your name,
+          email address and profile photo.</li>
+        <li><strong>Content you create:</strong> the groups you create, the expenses you add
+          (description, amount, participants), recorded payments, in-group chat messages and
+          any avatar photo you upload.</li>
+        <li><strong>Minimal technical data:</strong> information needed to keep you securely
+          signed in.</li>
+      </ul>
+      <p>We do not collect your location, contacts or payment data. Puchito does not process
+        real money: it only keeps track of who owes whom.</p>
+
+      <h2>2. How we use your data</h2>
+      <ul>
+        <li>To run the App: create your account, show your groups and compute balances.</li>
+        <li>To show your name and avatar to other members of your groups.</li>
+        <li>To enable in-group chat.</li>
+        <li>To respond to your support requests.</li>
+      </ul>
+      <p>We do not sell your data and we do not use it for advertising.</p>
+
+      <h2>3. Who we share it with</h2>
+      <p>We share data only with the providers that make the App work:</p>
+      <ul>
+        <li><strong>Supabase</strong> — database storage, authentication and file storage
+          (avatars). Your data is stored on their infrastructure.
+          (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase Privacy</a>)</li>
+        <li><strong>Google</strong> — sign-in (Google Sign-In / OAuth).
+          (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy</a>)</li>
+      </ul>
+      <p>Other members of a group can see your name, your avatar and the expenses, payments
+        and messages you add in that group.</p>
+
+      <h2>4. Where it is stored and how it is protected</h2>
+      <p>Your data is stored on Supabase infrastructure (PostgreSQL). Access is restricted via
+        row-level security (RLS) policies, so each user can only see the data of the groups
+        they belong to. The connection to our servers is encrypted (HTTPS).</p>
+
+      <h2>5. Data retention and deletion</h2>
+      <p>We keep your data while your account is active. You can <strong>delete your account at
+        any time</strong> from within the App (Account → Delete account).</p>
+      <p>When you delete your account:</p>
+      <ul>
+        <li>We remove your personal data: name, email and profile photo, and your access is revoked.</li>
+        <li>For accounting integrity, the expenses and payments you shared with other people are
+          kept in an <strong>anonymized</strong> form (you appear as "Deleted user"), so the
+          balances of other group members are not altered.</li>
+      </ul>
+      <p>To exercise any right over your data, email us at
+        <a href="mailto:villacortav.nicolas@gmail.com">villacortav.nicolas@gmail.com</a>.</p>
+
+      <h2>6. Your rights</h2>
+      <p>You can access your data, correct it (via Edit profile) or delete it (by deleting your
+        account). For any other request, contact us by email.</p>
+
+      <h2>7. Children</h2>
+      <p>Puchito is not directed to children under 13. We do not knowingly collect data from
+        children under that age. If you believe a child has provided us with data, contact us
+        and we will delete it.</p>
+
+      <h2>8. Changes to this policy</h2>
+      <p>We may update this policy. We will post the new version on this page and update the
+        "Last updated" date.</p>
+
+      <h2>9. Contact</h2>
+      <p>For questions about this policy or your data:
+        <a href="mailto:villacortav.nicolas@gmail.com">villacortav.nicolas@gmail.com</a></p>
+    </section>
+
+    <footer>© 2026 Puchito</footer>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      var es = document.getElementById('es');
+      var en = document.getElementById('en');
+      var bes = document.getElementById('btn-es');
+      var ben = document.getElementById('btn-en');
+      var showEn = lang === 'en';
+      es.hidden = showEn;
+      en.hidden = !showEn;
+      bes.classList.toggle('active', !showEn);
+      ben.classList.toggle('active', showEn);
+      document.documentElement.lang = lang;
+    }
+    // Idioma inicial según el navegador (default español).
+    if ((navigator.language || 'es').toLowerCase().startsWith('en')) setLang('en');
+  </script>
+</body>
+</html>
