@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
   <title>Política de Privacidad — Puchito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #111111;
@@ -25,10 +28,20 @@
       padding: 0 20px;
     }
     .wrap { max-width: 760px; margin: 0 auto; padding: 48px 0 80px; }
+    /* Wordmark idéntico a la app: Bricolage Grotesque ExtraBold, el punto coral
+       con skew -10° (la marca no usa un italic real) y letter-spacing -0.045em. */
     .brand {
-      font-size: 28px; font-weight: 800; letter-spacing: -1px; margin: 0 0 4px;
+      font-family: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -1.53px; /* -(34 * 0.045) */
+      margin: 0 0 4px;
     }
-    .brand .dot { color: var(--coral); font-style: italic; }
+    .brand .dot {
+      color: var(--coral);
+      display: inline-block;
+      transform: skewX(-10deg);
+    }
     h1 { font-size: 24px; margin: 28px 0 4px; letter-spacing: -0.5px; }
     h2 { font-size: 18px; margin: 32px 0 8px; letter-spacing: -0.3px; }
     p, li { color: var(--text); font-size: 15px; }
